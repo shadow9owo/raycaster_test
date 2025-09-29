@@ -129,11 +129,12 @@ namespace DG2D {
                     reinterpret_cast<char*>(&size),
                     reinterpret_cast<char*>(&size) + sizeof(size));
                 newData.insert(newData.end(), Value.begin(), Value.end());
-
+    
                 outfile.write(newData.data(), newData.size());
                 outfile.close();
                 return true;
             }
+
 
             std::ofstream outfile(filename, std::ios::binary | std::ios::trunc);
             outfile.write(newData.data(), newData.size());
